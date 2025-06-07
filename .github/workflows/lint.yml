@@ -1,0 +1,21 @@
+name: Lint
+on: [push]
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        id: setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2, phplint
+          converage: none
+      - name: Check PHP syntax
+        run: phplint --exclude=*.log .
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --no-interaction
+      - name: Run Larastan
+        run: ./vendor/bin/phpstan analyse --configuration="phpstan.neon.dist" --no-progress
