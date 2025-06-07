@@ -12,7 +12,7 @@ jobs:
         with:
           php-version: '8.2'
           tools: composer:v2, phplint
-          converage: none
+          coverage: none
       - name: Check PHP syntax
         run: phplint --exclude=*.log .
       - name: Install dependencies
