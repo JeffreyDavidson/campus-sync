@@ -24,3 +24,8 @@ Homestead.yaml
 npm-debug.log
 Thumbs.db
 yarn-error.log
+
+# PHPStan cache
+phpstan.neon
+.phpstan/cache/
+.phpstan-result-cache.php
