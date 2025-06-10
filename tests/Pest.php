@@ -37,7 +37,7 @@ pest()->extend(Tests\TestCase::class)
 |
 */
 
-function something()
+function something(): void
 {
     // ..
 }
